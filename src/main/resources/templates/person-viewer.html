@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>JUGademy Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<a href="/person-creator">Create another person</a><br/><br/>
+
+Created persons:<br/><br/>
+
+<!--/*@thymesVar id="persons" type="java.util.List<com.github.mkopylec.jugademydemo.Person>"*/-->
+<div th:each="person : ${persons}">
+    Name: <span th:text="${person.name}"></span><br/>
+    Surname: <span th:text="${person.surname}"></span><br/>
+    Age: <span th:text="${person.age}"></span><br/>
+    <br/>
+</div>
+
+</body>
+</html>
