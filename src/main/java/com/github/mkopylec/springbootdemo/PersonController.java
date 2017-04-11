@@ -1,4 +1,4 @@
-package com.github.mkopylec.jugademydemo;
+package com.github.mkopylec.springbootdemo;
 
 import org.slf4j.Logger;
 import org.springframework.data.mongodb.core.MongoTemplate;

@@ -1,4 +1,4 @@
-package com.github.mkopylec.jugademydemo;
+package com.github.mkopylec.springbootdemo;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
