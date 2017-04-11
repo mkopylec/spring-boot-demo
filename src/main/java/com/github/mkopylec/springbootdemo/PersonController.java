@@ -32,7 +32,7 @@ public class PersonController {
     public String showPersonViewer(Model model) {
         List<Person> persons = mongo.findAll(Person.class);
         model.addAttribute("persons", persons);
-        log.info("Found persons: {}", persons);
+        log.info("Persons found: {}", persons);
         return "person-viewer";
     }
 
