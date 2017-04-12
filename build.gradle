@@ -11,6 +11,10 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
 
+test {
+    systemProperties = System.properties
+}
+
 repositories {
     mavenCentral()
 }
@@ -19,4 +23,9 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.5.2.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '1.5.2.RELEASE'
     compile group: 'de.flapdoodle.embed', name: 'de.flapdoodle.embed.mongo', version: '2.0.0'
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.2.RELEASE'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-api', version: '3.3.1'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: '3.3.1'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '3.3.1'
 }

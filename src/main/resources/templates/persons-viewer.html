@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+</head>
+<body>
+
+<p>
+    <a id="persons-creator" class="btn btn-default" href="/persons-creator">Create another person</a>
+</p>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                Created persons
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Age</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--/*@thymesVar id="persons" type="java.util.List<com.github.mkopylec.springbootdemo.Person>"*/-->
+                    <tr th:each="person,iter : ${persons}">
+                        <td th:id="${'person-' + iter.index +'-name'}" th:text="${person.name}"></td>
+                        <td th:id="${'person-' + iter.index +'-surname'}" th:text="${person.surname}"></td>
+                        <td th:id="${'person-' + iter.index +'-age'}" th:text="${person.age}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -22,24 +22,24 @@ public class PersonController {
         this.mongo = mongo;
     }
 
-    @GetMapping("/person-creator")
+    @GetMapping("/persons-creator")
     public String showPersonCreator(Model model) {
         model.addAttribute("person", new Person());
-        return "person-creator";
+        return "persons-creator";
     }
 
-    @GetMapping("/person-viewer")
+    @GetMapping("/persons-viewer")
     public String showPersonViewer(Model model) {
         List<Person> persons = mongo.findAll(Person.class);
         model.addAttribute("persons", persons);
         log.info("Persons found: {}", persons);
-        return "person-viewer";
+        return "persons-viewer";
     }
 
-    @PostMapping("/person-creator")
+    @PostMapping("/persons-creator")
     public void createPerson(Person person, Model model) {
         mongo.save(person);
-        model.addAttribute("message", "Person created: " + person.getName() + " " + person.getSurname());
+        model.addAttribute("message", "Person " + person.getName() + " " + person.getSurname() + " created.");
         log.info("Person created: {}", person);
     }
 }
